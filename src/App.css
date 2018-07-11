@@ -1,17 +1,21 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+}
 .App {
-  text-align: center;
+  
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  /*animation: App-logo-spin infinite 20s linear; */
+  height: 50px;
+  position: center;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+  max-width: 100%;
+  display: block;
+  height: auto;
+  /*background-image: url("pokemon.json"); */
 }
 
 .App-title {
@@ -22,7 +26,19 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
+
+/*@keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+*/
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav {
+  margin-top: 5px;
 }

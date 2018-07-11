@@ -1,13 +1,51 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logoA from './logoA.svg';
 import './App.css';
+import Lottie from 'react-lottie';
+import * as animationData from './pokemon.json'
+
+{/*}
+const Nav = React.createClass( {
+  render: function() {
+    return(
+      <nav>
+        <div className="navBig">
+          <div className="bigLinks">
+            <a href="#works">About</a>
+            <a href="#works">Works</a>
+            <a href="#works">Resume</a>
+          </div>
+        </div>
+
+        <div className="navSmall">
+          <i className="fa fa-bars fa-2x" onClick={this.menuToggle}></i>
+          <div className="smallLinks">
+            <a href="#works" onClick={this.menuToggle}>About</a>
+            <a href="#works" onClick={this.menuToggle}>Works</a>
+            <a href="#works" onClick={this.menuToggle}>Resume</a>
+          </div>
+        </div>
+      </nav>
+    );
+  },
+    menuToggle: function() {
+      let links = document.querySelector('.smallLinks');
+      if (links.style.display === 'block') {
+        links.style.display = 'none';
+      } else {
+        links.style.display = 'block';
+      }
+
+    }
+});
+*/}
 
 const Kitchin = () => {
   return (
       <div>
         <h2> Kitchin </h2>
         <p> Skills used: graphic design, html, css, UI/UX </p>
-        <img src={require('./kitchin.jpg')}  />
+        <img src={require('./kitchin.jpg') }   />
       </div>
 
   );
@@ -35,7 +73,7 @@ const Other = () => {
 const Works = () => {
   return (
     <div>
-      <h1> Works </h1>
+      <h1 id="works"> Works </h1>
       <p> some work </p>
 
       <Kitchin  />
@@ -46,22 +84,48 @@ const Works = () => {
 }
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isStopped: false, isPaused: false};
+  }
   render() {
+    const defaultOptions = {
+      loop: true,
+      autoplay: true,
+      animationData: animationData,
+      rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+      }
+    };
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Amberly&#39;s Portfolio</h1>
+          <a href="#work"><img src={logoA} className="App-logo" alt="logo" /> </a>
+          {/*<h1 className="App-title">Amberly</h1> */}
+          
+          <ul class="main-nav">
+          <li><a href="#work">About</a></li>
+          <li><a href="#work">Portfolio</a></li>
+          <li><a href="#work">Resume</a></li>
+        </ul>
+          
+          
+          
+          <Lottie options={defaultOptions}
+              isStopped={this.state.isStopped}
+              isPaused={this.state.isPaused}/>
+          
+        
         </header>
         <p className="App-intro">
           Welcome to my site.
         </p>
-
+            
       <Works  />
       </div>
-          );
-        }
-      }
+        );
+    }
+  }
 
         {/*class PortfolioWorks extends React.Component {
           constructor(props) {
