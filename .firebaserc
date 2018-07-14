@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "staging": "amberly-site",
+    "default": "amberly-site"
+  }
+}

@@ -4,48 +4,15 @@ import './App.css';
 import Lottie from 'react-lottie';
 import * as animationData from './pokemon.json'
 
-{/*}
-const Nav = React.createClass( {
-  render: function() {
-    return(
-      <nav>
-        <div className="navBig">
-          <div className="bigLinks">
-            <a href="#works">About</a>
-            <a href="#works">Works</a>
-            <a href="#works">Resume</a>
-          </div>
-        </div>
-
-        <div className="navSmall">
-          <i className="fa fa-bars fa-2x" onClick={this.menuToggle}></i>
-          <div className="smallLinks">
-            <a href="#works" onClick={this.menuToggle}>About</a>
-            <a href="#works" onClick={this.menuToggle}>Works</a>
-            <a href="#works" onClick={this.menuToggle}>Resume</a>
-          </div>
-        </div>
-      </nav>
-    );
-  },
-    menuToggle: function() {
-      let links = document.querySelector('.smallLinks');
-      if (links.style.display === 'block') {
-        links.style.display = 'none';
-      } else {
-        links.style.display = 'block';
-      }
-
-    }
-});
-*/}
 
 const Kitchin = () => {
   return (
-      <div>
-        <h2> Kitchin </h2>
-        <p> Skills used: graphic design, html, css, UI/UX </p>
-        <img src={require('./kitchin.jpg') }   />
+      <div class="container">
+        <img src={require('./images/kitchin.png')} alt="kitchin" class="responsive"   />
+        <div class="overlay">
+          <p class="text"> Kitchin </p>
+          <p class="subtext"> UI/UX </p>
+        </div>    
       </div>
 
   );
@@ -53,19 +20,35 @@ const Kitchin = () => {
 
 const Stellarium = () => {
   return (
-      <div>
-        <h2> Stellarium </h2>
-        <p> Skills used: Adobe After Effects, Adobe Illustrator </p>
-        <img src={require('./stellarium.png')}  />
+      <div class="container">
+        <img src={require('./images/stellarium.png')}  alt="stellarium" class="responsive"/>
+        <div class="overlay">
+          <p class="text"> Stellarium </p>
+          <p class="subtext"> After Effects, Illustrator </p>
+        </div>
       </div>
   );
   };
 
-const Other = () => {
+const SASE = () => {
   return (
-      <div>
-        <h2> Other </h2>
-        <p> Skills used: Adobe Illustrator, Adobe Photoshop, Adobe InDesign </p>
+      <div class="container">
+        <img src={require('./images/saselogo.png')}  alt="stellarium" class="responsive"/>
+        <div class="overlay">
+          <p class="text"> SASE </p>
+          <p class="subtext"> Photoshop, Illustrator, InDesign </p>
+        </div>
+      </div>
+  );
+  };
+const KOTX = () => {
+  return (
+      <div class="container">
+        <img src={require('./images/kotx.png')} alt="other" class="responsive"/>
+        <div class="overlay">
+          <p class="text"> KOTX </p>
+          <p class="subtext"> Photoshop, After Effects</p>
+        </div>
       </div>
   );
   };
@@ -74,15 +57,30 @@ const Works = () => {
   return (
     <div>
       <h1 id="works"> Works </h1>
-      <p> some work </p>
 
-      <Kitchin  />
-      <Stellarium />
-      <Other  />
+      <div class="row">
+        <div class="column">
+          <Kitchin  />
+        </div>
+        <div class="column">
+          <Stellarium />
+        </div>
+        <div class="column">
+          <SASE />
+        </div>
+        <div class="column">
+          <KOTX />
+        </div>
+      </div>
+
+      
+        
+        
     </div>
   )
 }
 
+  
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -100,54 +98,43 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <a href="#work"><img src={logoA} className="App-logo" alt="logo" /> </a>
+          
           {/*<h1 className="App-title">Amberly</h1> */}
-          
+          <a href="#"><img src={logoA} className="App-logo" alt="logo" /> </a> 
           <ul class="main-nav">
-          <li><a href="#work">About</a></li>
-          <li><a href="#work">Portfolio</a></li>
-          <li><a href="#work">Resume</a></li>
-        </ul>
-          
-          
-          
+            <li><a href="#">amberly ngo</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#works">Portfolio</a></li>
+            <li><a href="amdoingstuff.tumblr.com" target="_blank">journal</a></li>
+          </ul>
+        </header>
+
+        <div class="animation">
           <Lottie options={defaultOptions}
               isStopped={this.state.isStopped}
               isPaused={this.state.isPaused}/>
-          
+        </div>
         
-        </header>
-        <p className="App-intro">
-          Welcome to my site.
+        <p className="App-intro" id="about"nav>
+          Hi I'm Amberly! Student at UC San Diego studying Computing and Visual Arts. 
+          When I'm not in front of the computer coding, designing, or animating, I'm either
+          working out, travelling, or playing co-op games. Also interested in good music and good food. 
+          Still in training, but I'm determined to make my way no matter 
+          low long it takes. I love a good conversation! I'd love to chat through LinkedIn, Dribbble, Github, Instagram, or Email.
         </p>
-            
-      <Works  />
-      </div>
+        
+
+        <div class="container">
+          <Works  />
+        </div>
+     
+        
+
+
+       </div>
         );
     }
   }
-
-        {/*class PortfolioWorks extends React.Component {
-          constructor(props) {
-            super(props);
-          }
-
-          render() {
-            return (
-              <div>
-                <h1> Works </h1>
-                  <Kitchin  />
-                  <Stellarium  />
-                  <Other  />
-              </div>
-            );
-          }
-        };
-        ReactDOM.render(<  />, document.getElementById("challenge-node")); */}
-
-
-
-
 
 
 export default App;

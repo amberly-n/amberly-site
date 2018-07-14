@@ -1,21 +1,22 @@
 * {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 .App {
   
 }
-
 .App-logo {
   /*animation: App-logo-spin infinite 20s linear; */
   height: 50px;
-  position: center;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 1500;
 }
 
 .App-header {
   max-width: 100%;
   display: block;
-  height: auto;
-  /*background-image: url("pokemon.json"); */
+  height: 50px;
 }
 
 .App-title {
@@ -24,8 +25,11 @@
 
 .App-intro {
   font-size: large;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  height: 100px;
 }
-
 
 /*@keyframes App-logo-spin {
   from { transform: rotate(0deg); }
@@ -33,12 +37,138 @@
 }
 */
 
+/*nav bar*/
+a {
+  text-decoration: none;
+  color: black;
+}
+.App-logo a {
+  display: flex;
+  justify-content: center;
+}
+.main-nav a {
+  padding: 15px 15px;
+  display: block;
+  text-align: center;
+  
+}
+
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  justify-content: flex-end;
 }
 
 .main-nav {
-  margin-top: 5px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  background-color: white;
+  
 }
+
+.main-nav a {
+  text-transform: lowercase;
+  text-align: center;
+  font-size: .99em;
+}
+
+.main-nav a:hover {
+  color: cornflowerblue;
+}
+
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+.responsive hover {
+  opacity: 50%;
+}
+
+
+/*works section*/
+.row {
+  display: flex;
+}
+.column {
+  flex: 25%;
+  padding: 10px;
+}
+.container {
+  display: block;
+  position: relative;
+  margin: auto auto;
+}
+.container h1 {
+  text-align: center;
+}
+.overlay {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+}
+.overlay:hover  {
+  opacity: 0.75;
+}
+.text {
+  color: black;
+  font-size: large;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: lowercase;
+}
+.subtext {
+  color: black;
+  font-size: large;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: lowercase;
+}
+
+
+
+/*media queries*/
+@media (min-width: 800px) {
+	.App-header,
+	.main-nav {
+		display: flex;
+	}
+	.App-header {
+		flex-direction: column;
+		align-items: center;
+		width: 80%;
+		margin: 0 auto;
+		max-width: 1150px;
+	}
+}
+
+@media (min-width: 1025px) {
+	.App-header {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}
+
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+
+
+/*
+.copyright {
+  display: flex;
+  text-align: center;
+}
+*/
