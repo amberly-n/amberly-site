@@ -15,7 +15,6 @@
 
 .App-header {
   max-width: 100%;
-  display: block;
   height: 50px;
 }
 
@@ -26,9 +25,8 @@
 .App-intro {
   font-size: large;
   display: flex;
-  justify-content: center;
-  padding: 50px;
-  height: 100px;
+  padding: 0 150px;
+  line-height: 1.5;
 }
 
 /*@keyframes App-logo-spin {
@@ -46,37 +44,44 @@ a {
   display: flex;
   justify-content: center;
 }
+
 .main-nav a {
   padding: 15px 15px;
-  display: block;
   text-align: center;
-  
+  text-transform: lowercase;
+  font-size: .99em;
+  flex-direction: row;
 }
-
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  justify-content: flex-end;
 }
 
+.logo a{
+  color: cornflowerblue;
+}
 .main-nav {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   z-index: 1000;
-
   background-color: white;
-  
-}
+  padding: 20px 0;
 
-.main-nav a {
-  text-transform: lowercase;
-  text-align: center;
-  font-size: .99em;
 }
-
+.main-nav .nav {
+  float: right;
+}
+.nav li {
+  display: inline;
+}
+.main-nav .logo {
+  display: flex;
+  color: cornflowerblue;
+  float: left;
+}
 .main-nav a:hover {
   color: cornflowerblue;
 }
@@ -96,13 +101,11 @@ ul {
   display: flex;
 }
 .column {
-  flex: 25%;
+  flex: 1;
   padding: 10px;
 }
 .container {
-  display: block;
   position: relative;
-  margin: auto auto;
 }
 .container h1 {
   text-align: center;
@@ -138,37 +141,52 @@ ul {
 
 
 /*media queries*/
-@media (min-width: 800px) {
-	.App-header,
+@media (max-width: 500px) {
+	
 	.main-nav {
-		display: flex;
-	}
-	.App-header {
-		flex-direction: column;
 		align-items: center;
-		width: 80%;
+		width: 100%;
 		margin: 0 auto;
-		max-width: 1150px;
 	}
+  .nav {
+    display: flex;
+    flex-direction: column;
+    float: none;
+  }
+  .nav li{
+    padding: 10px;
+    text-align: center;
+  }
+  .about {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    justify-content: center;
+  }
+  .App-intro {
+    font-size: medium;
+    display: inline-block;
+		padding: 15px;
+  }
+  
+  .text, .subtext {
+    font-size: small;
+  }
 }
 
 @media (min-width: 1025px) {
-	.App-header {
+	.main-nav {
 		flex-direction: row;
-		justify-content: space-between;
 	}
 }
 
 @media screen and (max-width: 500px) {
   .column {
     width: 100%;
+    display: block;
+    padding: 50px;
+  }
+  .row {
+    display: block;
   }
 }
-
-
-/*
-.copyright {
-  display: flex;
-  text-align: center;
-}
-*/
