@@ -12,16 +12,6 @@
   justify-content: center;
   z-index: 1500;
 }
-
-.App-header {
-  max-width: 100%;
-  height: 50px;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
 .App-intro {
   font-size: large;
   display: flex;
@@ -40,26 +30,17 @@ a {
   text-decoration: none;
   color: black;
 }
-.App-logo a {
-  display: flex;
-  justify-content: center;
-}
-
 .main-nav a {
-  padding: 15px 15px;
+  padding: 10px 15px;
   text-align: center;
   text-transform: lowercase;
   font-size: .99em;
-  flex-direction: row;
+  display: block;
 }
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-.logo a{
-  color: cornflowerblue;
 }
 .main-nav {
   position: fixed;
@@ -68,31 +49,51 @@ ul {
   width: 100%;
   z-index: 1000;
   background-color: white;
-  padding: 20px 0;
-
-}
-.main-nav .nav {
-  float: right;
-}
-.nav li {
-  display: inline;
+  padding: 10px 0;
+  /*shadow*/
+  border: 1px solid #aaaaaa;
+  box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
 }
 .main-nav .logo {
-  display: flex;
   color: cornflowerblue;
-  float: left;
+  font-size: .99em;
+  margin: 0;
+}
+.main-nav .nav {
+  margin-top: 5px;
 }
 .main-nav a:hover {
   color: cornflowerblue;
 }
+.logo a{
+  color: cornflowerblue;
+}
+
 
 .responsive {
   max-width: 100%;
   height: auto;
 }
-
 .responsive hover {
   opacity: 50%;
+}
+
+/* header image */
+.imgcontainer {
+  position: relative;
+  padding-top: 60px;
+}
+.responsiveBackground {
+  max-width: 100%;
+  height: auto;
+}
+.header-name {
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  
 }
 
 
@@ -142,25 +143,10 @@ ul {
 
 /*media queries*/
 @media (max-width: 500px) {
-	
-	.main-nav {
-		align-items: center;
-		width: 100%;
-		margin: 0 auto;
-	}
-  .nav {
-    display: flex;
-    flex-direction: column;
-    float: none;
-  }
-  .nav li{
-    padding: 10px;
-    text-align: center;
-  }
   .about {
     display: flex;
     flex-direction: column;
-    text-align: right;
+    text-align: left;
     justify-content: center;
   }
   .App-intro {
@@ -168,17 +154,44 @@ ul {
     display: inline-block;
 		padding: 15px;
   }
-  
   .text, .subtext {
     font-size: small;
   }
+  .header-name {
+    font-size: large;
+  }
+  .imgcontainer {
+    padding-top: 180px;
+  }
 }
 
+
+
+/*for nav bar*/
+@media (min-width: 500px) {
+  .main-nav,
+  .nav {
+    display: flex;
+  }
+  .main-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  .imgcontainer {
+    padding-top: 100px;
+  }
+}
 @media (min-width: 1025px) {
 	.main-nav {
 		flex-direction: row;
+    justify-content: space-between;
 	}
+  .imgcontainer {
+    padding-top: 60px;
+  }
 }
+
+
 
 @media screen and (max-width: 500px) {
   .column {

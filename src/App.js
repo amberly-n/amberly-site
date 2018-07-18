@@ -3,25 +3,33 @@ import logoA from './logoA.svg';
 import './App.css';
 import Lottie from 'react-lottie';
 import { css } from 'emotion';
-import * as animationData from './pokemon.json'
+import * as animationData from './pokemon.json';
+//import Responsive from 'react-responsive-background';
 
-const Header = () => {
+const Navbar = () => {
   return (
     <div className="main-nav">
-
-      {/*<h1 className="App-title">Amberly</h1> 
-          <a href="#"><img src={logoA} className="App-logo" alt="logo" /> </a>  */}
-      <ul className="logo">
-        <li><a href="#">[amberly ngo]</a></li>
-      </ul>
+      {/* <a href="#"><img src={logoA} className="App-logo" alt="logo" /> </a>  */}
+      <h1 className="logo"><a href="#">[amberly ngo]</a></h1>
       <ul className="nav">
         <li><a href="#about">About</a></li>
         <li><a href="#works">Portfolio</a></li>
         <li><a href="amdoingstuff.tumblr.com" target="_blank">journal</a></li>
       </ul>
     </div>
+  );
+};
+
+
+const Header = () => {
+  return (
+    <div class="imgcontainer">
+        {/*<img src={require('./images/background.png')} /> */}
+        <h1 className="header-name"> hi! im amberly </h1>
+    </div>
   )
-}
+};
+
 
 const kitchenContainerStyle = css`
   display: flex;
@@ -38,12 +46,12 @@ const kitchenContainerOverlayStyle = css`
   top: 0,
   left: 0
 `
-
 const kitchenImageStyle = css`
   margin: 0 auto;
   max-width: 500px;
   max-height: 500px;
   object-fit: cover;
+  
 `
 const Kitchin = () => {
   return (
@@ -58,7 +66,6 @@ const Kitchin = () => {
         </div>
       </div>
     </React.Fragment>
-
   );
 };
 
@@ -145,35 +152,30 @@ const Works = () => {
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isStopped: false, isPaused: false };
+    // this.state = { isStopped: false, isPaused: false };
   }
   render() {
-    const defaultOptions = {
-      loop: true,
-      autoplay: true,
-      animationData: animationData,
-      rendererSettings: {
-        preserveAspectRatio: 'xMidYMid slice'
-      }
-    };
+    // const defaultOptions = {
+    //   loop: true,
+    //   autoplay: true,
+    //   animationData: animationData,
+    //   rendererSettings: {
+    //     preserveAspectRatio: 'xMidYMid slice'
+    //   }
+    //};
     return (
       <div className="App">
-        <Header />
-
-        <div class="animation">
-          <Lottie options={defaultOptions}
-            isStopped={this.state.isStopped}
-            isPaused={this.state.isPaused} />
+        <Navbar />
+        
+        {/*<Header /> */}
+        <div class="imgcontainer">
+          <img src={require('./images/background.png')} alt="koi" class="responsiveBackground"/>
+          <h1 className="header-name"> amberly ngo </h1>
         </div>
-
+        
         <About />
 
-        <div class="container">
-          <Works />
-        </div>
-
-
-
+        <Works />
 
       </div >
     );
