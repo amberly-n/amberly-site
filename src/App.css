@@ -112,30 +112,34 @@ ul {
   text-align: center;
 }
 .overlay {
-  position: absolute;
-  top: 0; bottom: 0; left: 0; right: 0;
   height: 100%;
   width: 100%;
-  opacity: 0;
   transition: .5s ease;
   background-color: white;
 }
 .overlay:hover  {
   opacity: 0.75;
 }
+.overlay:hover > .centered-text {
+  display: block;
+}
+.centered-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: none;
+}
 .text {
   color: black;
   font-size: large;
   font-weight: bold;
-  text-align: center;
-  vertical-align: middle;
   text-transform: lowercase;
 }
 .subtext {
   color: black;
   font-size: large;
-  text-align: center;
-  vertical-align: middle;
   text-transform: lowercase;
 }
 

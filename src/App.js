@@ -32,24 +32,21 @@ const Header = () => {
 
 
 const kitchenContainerStyle = css`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   align-content: center;
-  max-height: 500px;
-  max-width: 500px;
+  max-height: 300px;
+  max-width: 300px;
   padding: 0 20px;
 `
-const kitchenContainerOverlayStyle = css`
-  position: absolute,
-  top: 0,
-  left: 0
-`
+
 const kitchenImageStyle = css`
   margin: 0 auto;
-  max-width: 500px;
-  max-height: 500px;
+  max-width: 300px;
+  max-height: 300px;
   object-fit: cover;
   
 `
@@ -57,12 +54,12 @@ const Kitchin = () => {
   return (
     <React.Fragment>
       <div className={kitchenContainerStyle}>
-        <div>
-          <img src={require('./images/kitchin.png')} alt="kitchin" className={kitchenImageStyle} />
-        </div>
         <div class="overlay">
-          <p class="text"> Kitchin </p>
-          <p class="subtext"> UI/UX </p>
+          <img src={require('./images/kitchin.png')} alt="kitchin" className={kitchenImageStyle} />
+          <div class="centered-text">
+            <p class="text"> Kitchin </p>
+            <p class="subtext"> UI/UX </p>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -131,7 +128,7 @@ const workContainerStyle = css`
 const Works = () => {
   return (
     <div className={workContainerStyle}>
-      <Kitchin />
+      {Kitchin()}
       {/* 
           <div class="column">
           <Stellarium />
@@ -175,7 +172,7 @@ class App extends React.Component {
         
         <About />
 
-        <Works />
+        {Works()}
 
       </div >
     );
