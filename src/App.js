@@ -5,6 +5,14 @@ import Lottie from 'react-lottie';
 import { css } from 'emotion';
 import * as animationData from './pokemon.json';
 //import Responsive from 'react-responsive-background';
+import PreviewWork from './components/preview-work/preview-work.jsx';
+
+import kitchinImg from'./images/kitchin.png';
+import stellariumImg from'./images/stellarium.png';
+import saseImg from'./images/saselogo.png';
+import kotxImg from'./images/kotx.png';
+
+
 
 const Navbar = () => {
   return (
@@ -24,14 +32,13 @@ const Navbar = () => {
 const Header = () => {
   return (
     <div class="imgcontainer">
-        {/*<img src={require('./images/background.png')} /> */}
-        <h1 className="header-name"> hi! im amberly </h1>
+      <h1 className="header-name"> hi! im amberly </h1>
     </div>
   )
 };
 
 
-const kitchenContainerStyle = css`
+const containerStyle = css`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -43,65 +50,13 @@ const kitchenContainerStyle = css`
   padding: 0 20px;
 `
 
-const kitchenImageStyle = css`
+const imageStyle = css`
   margin: 0 auto;
   max-width: 300px;
   max-height: 300px;
   object-fit: cover;
   
 `
-const Kitchin = () => {
-  return (
-    <React.Fragment>
-      <div className={kitchenContainerStyle}>
-        <div class="overlay">
-          <img src={require('./images/kitchin.png')} alt="kitchin" className={kitchenImageStyle} />
-          <div class="centered-text">
-            <p class="text"> Kitchin </p>
-            <p class="subtext"> UI/UX </p>
-          </div>
-        </div>
-      </div>
-    </React.Fragment>
-  );
-};
-
-const Stellarium = () => {
-  return (
-    <div class="container">
-      <img src={require('./images/stellarium.png')} alt="stellarium" class="responsive" />
-      <div class="overlay">
-        <p class="text"> Stellarium </p>
-        <p class="subtext"> After Effects, Illustrator </p>
-      </div>
-    </div>
-  );
-};
-
-const SASE = () => {
-  return (
-    <div class="container">
-      <div>
-        <img src={require('./images/saselogo.png')} alt="stellarium" class="responsive" />
-      </div>
-      <div class="overlay">
-        <p class="text"> SASE </p>
-        <p class="subtext"> Photoshop, Illustrator, InDesign </p>
-      </div>
-    </div>
-  );
-};
-const KOTX = () => {
-  return (
-    <div class="container">
-      <img src={require('./images/kotx.png')} alt="other" class="responsive" />
-      <div class="overlay">
-        <p class="text"> KOTX </p>
-        <p class="subtext"> Photoshop, After Effects</p>
-      </div>
-    </div>
-  );
-};
 
 const About = () => {
   return (
@@ -121,25 +76,21 @@ const About = () => {
 }
 
 const workContainerStyle = css`
-  flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
 `
 
 const Works = () => {
   return (
     <div className={workContainerStyle}>
-      {Kitchin()}
-      {/* 
-          <div class="column">
-          <Stellarium />
-        </div>
-        <div class="column">
-          <SASE />
-        </div>
-        <div class="column">
-          <KOTX />
-        </div>
-          */}
+        <PreviewWork imgSrc={kitchinImg} projectName="Kitchin" description="UI/UX" />
+        <PreviewWork imgSrc={stellariumImg} projectName="Stellarium" description="After Effects, Illustrator" />
+        <PreviewWork imgSrc={saseImg} projectName="SASE" description="Photoshop, Illustrator, InDesign" />
+        <PreviewWork imgSrc={kotxImg} projectName="KOTX" description="Illustrator" />
+
+
     </div>
 
   )
@@ -163,15 +114,14 @@ class App extends React.Component {
     return (
       <div className="App">
         <Navbar />
-        
+
         {/*<Header /> */}
         <div class="imgcontainer">
-          <img src={require('./images/background.png')} alt="koi" class="responsiveBackground"/>
+          <img src={require('./images/background.png')} alt="koi" class="responsiveBackground" />
           <h1 className="header-name"> amberly ngo </h1>
         </div>
-        
-        <About />
 
+        <About />
         {Works()}
 
       </div >

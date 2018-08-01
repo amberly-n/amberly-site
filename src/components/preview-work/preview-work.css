@@ -1,0 +1,19 @@
+    .containerStyle {
+          position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  max-height: 300px;
+  max-width: 300px;
+  padding: 0 20px;
+    }
+
+
+    .imageStyle {
+  margin: 0 auto;
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: cover;
+    }

@@ -118,10 +118,11 @@ ul {
   background-color: white;
 }
 .overlay:hover  {
-  opacity: 0.75;
+  opacity: 0.1;
 }
-.overlay:hover > .centered-text {
+.overlay:hover ~ .centered-text {
   display: block;
+  
 }
 .centered-text {
   position: absolute;
@@ -130,6 +131,7 @@ ul {
   transform: translate(-50%, -50%);
   text-align: center;
   display: none;
+
 }
 .text {
   color: black;
